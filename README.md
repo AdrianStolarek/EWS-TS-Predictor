@@ -1,4 +1,4 @@
-Description of the project: Small prediction model based on TDA and classic deep-learning methodologies.
+Small prediction model based on TDA and classic deep-learning methodologies.
 
 Time series data used for testing is in the file "NASDAQ.csv".
 
