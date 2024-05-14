@@ -38,8 +38,8 @@ class StockPricePredictor:
 
     def build_model(self):
         self.model = Sequential()
-        self.model.add(LSTM(100, return_sequences=True, input_shape = (self.time_step, 1)))
-        self.model.add(LSTM(100, return_sequences=False))
+        self.model.add(LSTM(532, return_sequences=True, input_shape = (self.time_step, 1)))
+        self.model.add(LSTM(700, return_sequences=False))
         self.model.add(Dense(25))
         self.model.add(Dense(1))
 
