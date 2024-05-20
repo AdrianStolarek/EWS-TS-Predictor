@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import tensorflow as tf
 from keras.models import Sequential
-from keras.layers import Dense, LSTM
+from keras.layers import Dense, LSTM, Dropout, Bidirectional
 from keras.callbacks import EarlyStopping
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.model_selection import train_test_split
@@ -36,7 +36,9 @@ class StockPricePredictor:
     def build_model(self):
         self.model = Sequential()
         self.model.add(LSTM(100, return_sequences=True, input_shape=(self.time_step, 1)))
+        self.model.add(Dropout(0.2))
         self.model.add(LSTM(100, return_sequences=False))
+        self.model.add(Dropout(0.2))
         self.model.add(Dense(25))
         self.model.add(Dense(1))
 
