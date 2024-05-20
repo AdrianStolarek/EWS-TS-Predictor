@@ -51,7 +51,7 @@ def process_files(directory_path, output_path):
 
 if __name__ == "__main__":
     # Directory containing all CSV files
-    directory_path = "C:/Users/adria/DAZHBOG/DAZHBOG-lite/DANE_COVID"
+    directory_path = "/DAZHBOG-lite/DATA_COVID"
 
     # Output file path
     output_path = "/DATA_ALL.csv"
