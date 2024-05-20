@@ -16,10 +16,10 @@ class StockPricePredictor:
         self.scaler = MinMaxScaler(feature_range=(0, 1))
 
     def load_data(self):
-        data = pd.read_csv(self.file_path, parse_dates=['Date'])
-        data.set_index('Date', inplace=True)
+        data = pd.read_csv(self.file_path, parse_dates=['Data'])
+        data.set_index('Data', inplace=True)
         self.data = data
-        self.scaled_data = self.scaler.fit_transform(data[['Co2']])
+        self.scaled_data = self.scaler.fit_transform(data[['liczba_wszystkich_zakazen']])
 
     def preprocess_data(self):
         X, Y = [], []
@@ -77,13 +77,13 @@ class StockPricePredictor:
         test_plot_index = self.data.index[self.time_step + train_len + 1:self.time_step + train_len + 1 + test_len]
         plt.plot(test_plot_index, test_predict, label='Test Prediction')
 
-        plt.xlabel('Date')
-        plt.ylabel('NASDAQ Index')
+        plt.xlabel('Data')
+        plt.ylabel('Liczba zakażeń')
         plt.legend()
         plt.show()
 
 
-predictor = StockPricePredictor(file_path="NASDAQ.csv", time_step=100)
+predictor = StockPricePredictor(file_path="../DATA_ALL.csv", time_step=100)
 predictor.load_data()
 predictor.preprocess_data()
 predictor.split_data()
