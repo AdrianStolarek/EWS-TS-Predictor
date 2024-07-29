@@ -1,4 +1,4 @@
-#DL-TDA_Neural_Net
+# DL-TDA_Neural_Net
 
 Small prediction model based on TDA and classic deep-learning methodologies.
 
